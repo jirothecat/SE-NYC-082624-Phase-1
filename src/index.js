@@ -54,4 +54,65 @@ const otherFoods = [
     }
 ]
 
-// write your code here
+// Deliverable #1
+burgers.forEach(burger => {
+    console.log(burger.name)
+})
+
+// Deliverable #2
+burgers.find((burger) => {
+    return burger.name === "Flatburger"
+})
+
+// Deliverable #3
+burgers.filter(burger => {
+    return burger.name.charAt(0) === "M"
+})
+
+// Deliverable #4
+burgers.map(burger => {
+    return burger.description 
+})
+
+// Deliverable #5
+const restaurantMenu = document.getElementById('restaurant-menu')
+
+for(let index = 0; index < burgers.length; index++){
+    const imgElement = document.createElement('img')
+    imgElement.className = 'burger'
+    imgElement.src = burgers[index].image
+    restaurantMenu.appendChild(imgElement)
+}
+
+// Deliverable #6
+otherFoods.forEach(food => {
+    const imgElement = document.createElement("img");
+    imgElement.src = food.image;
+    restaurantMenu.appendChild(imgElement);
+ })
+
+ // Deliverable #7
+ const detailImageElement = document.querySelector('.detail-image')
+ detailImageElement.src = burgers[0].image 
+
+ // Deliverable #8
+ const nameElement = document.querySelector('.name')
+ nameElement.textContent = burgers[0].name
+
+ // Deliverable #9
+const descriptionDisplayElement = document.getElementById('description-display')
+descriptionDisplayElement.textContent = burgers[0].description
+
+// Deliverable #10
+const restaurantMenuImageElements = document.querySelectorAll('div#restaurant-menu img')
+
+for(const img of restaurantMenuImageElements){
+    img.style = "border-style: solid; border-color: red; border-width: 3px"
+}
+
+// Deliverable #11
+const restaurantMenuBurgerImages = document.getElementsByClassName('burger')
+
+for(const img of restaurantMenuBurgerImages){
+    img.style.borderColor = "blue"
+}
